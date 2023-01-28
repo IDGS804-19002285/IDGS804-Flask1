@@ -18,6 +18,10 @@ def numero(n):
 def usern(id,username):
     return "ID: {} nombre: {}".format(id,username)
 
+# pasar varios parametros
+@app.route("/suma/<float:a>/<float:b>")
+def suma(a,b):
+    return 'La suma es: {}'.format(a,b)
 
 if __name__=='__main__':
     app.run(debug=True,port=3000)
