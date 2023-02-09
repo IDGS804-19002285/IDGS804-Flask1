@@ -1,0 +1,108 @@
+
+<form id="F" action="/zodiaco/" method="post">
+
+    <div id="uno">
+        <h1>Datos</h1>
+        <div>
+            <h4 class="wi d-inline-block">Nombre:</h4><input type="text" id="nombre" name="nombre" placeholder="Nombre"/>
+            <h4 class="wi d-inline-block">Paterno:</h4><input type="text" id="apaterno" name="apaterno" placeholder="Apellido paterno"/>
+            <h4 class="wi d-inline-block">Materno:</h4><input type="text" id="amaterno" name="amaterno" placeholder="Apellido materno"/>
+        </div>
+
+        <h2>Fecha de nacimiento</h2>
+
+        <div>
+            <h4 class="small">Dia</h4>
+            <h4 class="small">Mes</h4>
+            <h4 class="small">Año</h4>
+            <br>
+            <input class="small" type="number" id="dia" name="dia" placeholder="Dia" min="1"  max="31"/>
+            <input class="small" type="number" id="mes" name="mes" placeholder="Mes" min="01" max="12" />
+            <input class="small" type="number" id="ano" name="ano" placeholder="Año" min="1950" />
+        </div>
+
+        <div>
+            <label for="" class="w d-inline-block">Sexo</label><br>
+            <input class="m-2" type='radio' name='sex' value='M' required checked>Masculino
+            <input class="m-2" type='radio' name='sex' value='F'>Femenino
+            <br>
+        </div>
+
+    </div>
+
+ 
+
+    <div id="dos" style="display: none;">
+        <h4>Por que el profe Cardiel es el mejor?</h4>
+        <input class="m-2" type='radio' name='P1' value='1' required>a) Todos los incisos
+        <input class="m-2" type='radio' name='P1' value='2'>b) Es guapo
+        <input class="m-2" type='radio' name='P1' value='2'>c) Es buena onda
+        <input class="m-2" type='radio' name='P1' value='2'>d) Es carismatico
+
+        <h4>Por que el profe deberia pasarnos a todos?</h4>
+        <input class="m-2" type='radio' name='P2' value='2' required>a) Somos Cool
+        <input class="m-2" type='radio' name='P2' value='2'>b) Asistimos a clase
+        <input class="m-2" type='radio' name='P2' value='1'>c) Por que somos amigos
+        <input class="m-2" type='radio' name='P2' value='2'>d) Tenemos a Juan MTZ
+
+        <h4>Los cangrejos mueren?</h4>
+        <input class="m-2" type='radio' name='P3' value='1' required>a) Son inmortales
+        <input class="m-2" type='radio' name='P3' value='2'>b) si
+        <input class="m-2" type='radio' name='P3' value='2'>c) No 
+        <input class="m-2" type='radio' name='P3' value='2'>d) Tal vez
+
+        <h4>Complete "Arbol que nace torcido"</h4>
+        <input class="m-2" type='radio' name='P4' value='2' required>a) Se lo lleva la corriente
+        <input class="m-2" type='radio' name='P4' value='1'>b) Jamas su rama endereza
+        <input class="m-2" type='radio' name='P4' value='2'>c) Te sacaran los ojos 
+        <input class="m-2" type='radio' name='P4' value='2'>d) Crece grande y fuerte
+
+        <h4>El profe Cardiel de cuantos años se ve?</h4>
+        <input class="m-2" type='radio' name='P5' value='1' required>a) 20
+        <input class="m-2" type='radio' name='P5' value='2'>b) 30
+        <input class="m-2" type='radio' name='P5' value='2'>c) 40
+        <input class="m-2" type='radio' name='P5' value='2'>d) 50
+    </div>
+
+
+</form>
+
+
+<div>
+    
+    <div class="d-inline-block">
+    <button class="btn btn-primary" type="submit" form="F" id="btn_dos"
+        style="display: none;">Terminar</button>
+    </div>
+    <div class="d-inline-block">
+    <button class="btn btn-primary " type="button" id="btn_uno"
+        onclick="
+            if(
+                document.getElementById('nombre').value !='' &&
+                document.getElementById('apaterno').value !='' &&
+                document.getElementById('amaterno').value !='' &&
+
+                document.getElementById('dia').value !='' &&
+                document.getElementById('mes').value !='' &&
+                document.getElementById('ano').value !=''
+                ){
+                    document.getElementById('uno').style.display = 'none';
+                    document.getElementById('btn_uno').style.display = 'none';
+                    document.getElementById('dos').style.display = 'block';
+                    document.getElementById('btn_dos').style.display = 'block';
+            }else{
+                alert('Complete este formulario')
+            }
+            "
+
+        >Siguiente</button>
+    </div>
+    <button class="btn btn-primary d-inline-block" onclick="
+        document.getElementById('F').reset();
+        document.getElementById('uno').style.display = 'block';
+        document.getElementById('btn_uno').style.display = 'block';
+        document.getElementById('dos').style.display = 'none';
+        document.getElementById('btn_dos').style.display = 'none';
+        ">Limpiar</button>
+</div>
+</body>
