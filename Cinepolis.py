@@ -8,7 +8,7 @@ def cine():
         can= int(request.form.get('cantidad'))
         tarjeta = request.form.get('tarjeta')
         boletos = int(request.form.get('boletos'))
-        total = boletos * 1200
+        total = boletos * 12
         
         if boletos == 3 or boletos == 4 or boletos == 5:
             total = total * 0.9
@@ -22,12 +22,12 @@ def cine():
             total = '0'
             men = 'Venta prohibida'
         else:
-            men = 'todo bien'
+            men = 'Venta exitosa'
         return render_template("cine.html",v = total, m = men)
 
     else:
         can = 0
-        men = 'todo bien'
+        men = 'venta exitosa'
         return render_template("cine.html",v = can, m = men)
 
 if __name__ == '__main__':

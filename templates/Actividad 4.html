@@ -1,0 +1,42 @@
+<div class="p-4 row-fluid con" style="background-color: blue;">
+
+    <h2 class="text-center pb-4">Cinepolis</h2>
+    <div class="span12">
+        <div class="row-fluid">
+
+            <div class="span6">
+                    <legend class="flo p-2 colorW">Datos Personales</legend>
+                    <form id="F" style="margin-left: 50px;"
+                        action="/cine/" method="POST">
+
+                        <label for="" class="w inline-block">Nombre</label>
+                        <input type="text" name="nombre" required>
+                        <br>
+                        <label for="" class="w inline-block">Apaterno</label>
+                        <input type="number" name="Apaterno" required>
+                        <br>
+                        <label for="" class="w inline-block">Amaterno</label>
+                        <input type="number" name="Amaterno" required>
+                        <br>
+                        <h2>Fecha de nacimiento</h2>
+                        <div>
+                            <label>Dia <input type="number" name="dia" placeholder="Solo 2 numeros" required></label>
+                            <label>Mes <input type="number" name="mes" placeholder="Solo 2 numeros" required></label>
+                            <label>Año <input type="number" name="ano" placeholder="Solo 2 numeros" required></label>
+                        </div>
+                    </form>       
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 40%;width: 20%;">
+        <fieldset class="border p-2">
+            <legend class="flo p-2 colorW">Acciones</legend>
+
+            <div style="margin-left: 40px;padding-bottom: 20px;">
+                <button class="btn btn-light w inline-block" type="submit" form="F">Procesar</button>
+                <button class="btn btn-light w inline-block"
+                    onclick="document.getElementById('F').reset();">Salir</button>
+            </div>
+        </fieldset>
+    </div>
+</div>
