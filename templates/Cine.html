@@ -1,0 +1,62 @@
+
+<div class="p-4 row-fluid con" style="background-color: blue;">
+
+    <h2 class="text-center pb-4">Cinepolis</h2>
+    <div class="span12">
+        <div class="row-fluid">
+
+            <div class="span6">
+                <fieldset class="border">
+                    <legend class="flo p-2 colorW">Acciones</legend>
+                    <form id="F" style="margin-left: 50px;"
+                        action="/cine/" method="POST">
+
+                        <label for="" class="w inline-block">Nombre</label>
+                        <input type="text" name="nombre" required>
+                        <br>
+                        <label for="" class="w inline-block">Compradores</label>
+                        <input type="number" name="cantidad" required>
+                        <br>
+                        <label for="" class="w inline-block">Tarjeta cine</label>
+                        <input type='radio' name='tarjeta' value='S' required checked> Si
+                        <input type='radio' name='tarjeta' value='N'>No
+                        <br>
+                        <label for="" class="w inline-block">Cantidad de Boletos</label>
+                        <input type="number" name="boletos" required>
+                        <br><br>
+                    </form>
+                </fieldset>
+            </div>
+
+            <div class="span5">
+                <fieldset class="border">
+                    <legend class="flo p-2 colorW">Salida</legend>
+
+                    <div style="margin-left: 50px; padding-bottom:30px;">
+                        <label for="" class="w inline-block">Valor a pagar</label>
+                        <input type="text" readonly id="total" value={{v}}>
+                    </div>
+                    <ul>
+                        {% if m != 'ok' %}
+                        <li >{{m}}</li>
+                        {% endif %}
+
+                    </ul>
+
+                </fieldset>
+            </div>
+
+        </div>
+    </div>
+    <div style="margin-left: 40%;width: 20%;">
+        <fieldset class="border p-2">
+            <legend class="flo p-2 colorW">Acciones</legend>
+
+            <div style="margin-left: 40px;padding-bottom: 20px;">
+                <button class="btn btn-light w inline-block" type="submit" form="F">Procesar</button>
+                <button class="btn btn-light w inline-block"
+                    onclick="document.getElementById('F').reset();">Salir</button>
+            </div>
+        </fieldset>
+    </div>
+</div>
